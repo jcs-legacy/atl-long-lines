@@ -4,9 +4,8 @@
 # atl-long-lines
 > Automatically truncate lines for long lines.
 
-<p align="center">
-  <img src="./etc/demo.gif" width="600" height="349"/>
-</p>
+This plugin enable/disable `truncate-lines` base on the line length your 
+cursor currently on.
 
 ## Usage
 
@@ -18,7 +17,7 @@ M-x atl-long-lines-mode
 
 ## Contribution
 
-If you would like to contribute to this project, you may either 
-clone and make pull requests to this repository. Or you can 
-clone the project and establish your own branch of this tool. 
+If you would like to contribute to this project, you may either
+clone and make pull requests to this repository. Or you can
+clone the project and establish your own branch of this tool.
 Any methods are welcome!
