@@ -2,7 +2,7 @@
 /.git
 /recipes
 /test
-atl-too-long-pkg.el
+atl-long-lines-pkg.el
 
 # ignore generated files.
 *.elc
