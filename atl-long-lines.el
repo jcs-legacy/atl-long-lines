@@ -8,7 +8,7 @@
 ;; Keyword: truncate lines auto long
 ;; Version: 0.1.0
 ;; Package-Requires: ((emacs "24.3"))
-;; URL: https://github.com/jcs090218/atl-long-lines
+;; URL: https://github.com/jcs-elpa/atl-long-lines
 
 ;; This file is NOT part of GNU Emacs.
 
@@ -42,14 +42,6 @@
 
 ;;; Util
 
-(defun atl-long-lines--enable-truncate-lines ()
-  "Enable truncate lines."
-  (unless truncate-lines (toggle-truncate-lines)))
-
-(defun atl-long-lines--disable-truncate-lines ()
-  "Disable truncate lines."
-  (when truncate-lines (toggle-truncate-lines)))
-
 (defun atl-long-lines--end-line-column ()
   "Get the column at the end of line."
   (save-excursion (goto-char (line-end-position)) (current-column)))
@@ -60,8 +52,8 @@
   "Post command hook to do auto truncate lines in current buffer."
   (let ((message-log-max nil) (inhibit-message t))
     (if (< (window-width) (atl-long-lines--end-line-column))
-        (atl-long-lines--disable-truncate-lines)
-      (atl-long-lines--enable-truncate-lines))))
+        (toggle-truncate-lines -1)
+      (toggle-truncate-lines 1))))
 
 (defun atl-long-lines--enable ()
   "Enable 'atl-long-lines-mode'."
