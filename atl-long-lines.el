@@ -46,14 +46,21 @@
   "Get the column at the end of line."
   (save-excursion (goto-char (line-end-position)) (current-column)))
 
+(defun atl-long-lines--mute-apply (fnc &rest args)
+  "Execute FNC with ARGS without message."
+  (let ((message-log-max nil))
+    (with-temp-message (or (current-message) nil)
+      (let ((inhibit-message t))
+        (apply fnc args)))))
+
 ;;; Core
 
 (defun atl-long-lines--post-command-hook ()
   "Post command hook to do auto truncate lines in current buffer."
-  (let ((message-log-max nil) (inhibit-message t))
-    (if (< (window-width) (atl-long-lines--end-line-column))
-        (toggle-truncate-lines -1)
-      (toggle-truncate-lines 1))))
+  (atl-long-lines--mute-apply
+   (lambda ()
+     (if (< (window-width) (atl-long-lines--end-line-column))
+         (toggle-truncate-lines -1) (toggle-truncate-lines 1)))))
 
 (defun atl-long-lines--enable ()
   "Enable 'atl-long-lines-mode'."
