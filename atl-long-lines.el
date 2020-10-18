@@ -77,13 +77,13 @@
   :group atl-long-lines
   (if atl-long-lines-mode (atl-long-lines--enable) (atl-long-lines--disable)))
 
-(defun atl-long-lines--turn-on-line-reminder-mode ()
+(defun atl-long-lines--turn-on-atl-long-lines-mode ()
   "Turn on the 'atl-long-lines-mode'."
   (atl-long-lines-mode 1))
 
 ;;;###autoload
 (define-globalized-minor-mode global-atl-long-lines-mode
-  atl-long-lines-mode atl-long-lines--turn-on-line-reminder-mode
+  atl-long-lines-mode atl-long-lines--turn-on-atl-long-lines-mode
   :require 'atl-long-lines)
 
 (provide 'atl-long-lines)
