@@ -40,35 +40,50 @@
   :group 'tool
   :link '(url-link :tag "Repository" "https://github.com/jcs-elpa/atl-long-lines"))
 
+(defcustom atl-long-lines-delay 0.4
+  "Seconds to delay before trigger function `toggle-truncate-lines'."
+  :type 'float
+  :group 'atl-long-lines)
+
+(defvar atl-long-lines--timer nil
+  "Timer use for function `run-with-idle-timer'.")
+
 ;;; Util
 
 (defun atl-long-lines--end-line-column ()
   "Get the column at the end of line."
   (save-excursion (goto-char (line-end-position)) (current-column)))
 
-(defun atl-long-lines--mute-apply (fnc &rest args)
-  "Execute FNC with ARGS without message."
-  (let ((message-log-max nil))
-    (with-temp-message (or (current-message) nil)
-      (let ((inhibit-message t))
-        (apply fnc args)))))
+(defmacro atl-long-lines--mute-apply (&rest body)
+  "Execute BODY without message."
+  (declare (indent 0) (debug t))
+  `(let ((message-log-max nil))
+     (with-temp-message (or (current-message) nil)
+       (let ((inhibit-message t)) (progn ,@body)))))
 
 ;;; Core
 
-(defun atl-long-lines--post-command-hook ()
-  "Post command hook to do auto truncate lines in current buffer."
+(defun atl-long-lines-do-toggle ()
+  "Do toggle truncate lines at current position."
   (atl-long-lines--mute-apply
-   (lambda ()
-     (if (< (window-width) (atl-long-lines--end-line-column))
-         (toggle-truncate-lines -1) (toggle-truncate-lines 1)))))
+    (if (< (window-width) (atl-long-lines--end-line-column))
+        (toggle-truncate-lines -1)
+      (toggle-truncate-lines 1))))
+
+(defun atl-long-lines--start-timer ()
+  "Start the idle timer for activation."
+  (when (timerp atl-long-lines--timer) (cancel-timer atl-long-lines--timer))
+  (setq atl-long-lines--timer (run-with-idle-timer
+                               atl-long-lines-delay nil
+                               #'atl-long-lines-do-toggle)))
 
 (defun atl-long-lines--enable ()
   "Enable 'atl-long-lines-mode'."
-  (add-hook 'post-command-hook 'atl-long-lines--post-command-hook nil t))
+  (add-hook 'post-command-hook 'atl-long-lines--start-timer nil t))
 
 (defun atl-long-lines--disable ()
   "Disable 'atl-long-lines-mode'."
-  (remove-hook 'post-command-hook 'atl-long-lines--post-command-hook t))
+  (remove-hook 'post-command-hook 'atl-long-lines--start-timer t))
 
 ;;;###autoload
 (define-minor-mode atl-long-lines-mode
