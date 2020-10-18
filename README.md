@@ -2,9 +2,9 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 # atl-long-lines
-> Automatically truncate lines for long lines.
+> Turn off truncate lines when the line is long.
 
-This plugin enable/disable `truncate-lines` base on the line length your 
+This plugin enable/disable `truncate-lines` base on the line length your
 cursor currently on.
 
 ## Usage

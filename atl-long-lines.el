@@ -1,10 +1,10 @@
-;;; atl-long-lines.el --- Automatically truncate lines for long lines  -*- lexical-binding: t; -*-
+;;; atl-long-lines.el --- Turn off truncate lines when the line is long  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2020  Shen, Jen-Chieh
 ;; Created date 2020-08-01 14:57:57
 
 ;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
-;; Description: Automatically truncate lines for long lines.
+;; Description: Turn off truncate lines when the line is long.
 ;; Keyword: truncate lines auto long
 ;; Version: 0.1.4
 ;; Package-Requires: ((emacs "24.3"))
@@ -27,7 +27,7 @@
 
 ;;; Commentary:
 ;;
-;; Automatically truncate lines for long lines.
+;; Turn off truncate lines when the line is long.
 ;;
 
 ;;; Code:
@@ -35,7 +35,7 @@
 (require 'cl-lib)
 
 (defgroup atl-long-lines nil
-  "Automatically truncate lines for long lines."
+  "Turn off truncate lines when the line is long"
   :prefix "atl-long-lines-"
   :group 'tool
   :link '(url-link :tag "Repository" "https://github.com/jcs-elpa/atl-long-lines"))
