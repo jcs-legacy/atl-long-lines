@@ -27,7 +27,15 @@
 
 ;;; Commentary:
 ;;
-;; Turn off truncate-lines when the line is long.
+;; This minor mode provides a simple solution to simply turn off truncate-lines
+;; while cursor is out of window.
+;;
+;; To enable this minor mode, just simply do
+;;
+;;   (atl-long-lines 1)
+;;
+;; You can customize `atl-long-lines-delay' for number of seconds to delay
+;; before toggling truncate-lines.
 ;;
 
 ;;; Code:
@@ -35,7 +43,7 @@
 (require 'cl-lib)
 
 (defgroup atl-long-lines nil
-  "Turn off truncate-lines when the line is long"
+  "Turn off truncate-lines when the line is long."
   :prefix "atl-long-lines-"
   :group 'tool
   :link '(url-link :tag "Repository" "https://github.com/jcs-elpa/atl-long-lines"))
