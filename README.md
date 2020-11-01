@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.com/jcs-elpa/atl-long-lines.svg?branch=master)](https://travis-ci.com/jcs-elpa/atl-long-lines)
+[![MELPA](https://melpa.org/packages/atl-long-lines-badge.svg)](https://melpa.org/#/atl-long-lines)
+[![MELPA Stable](https://stable.melpa.org/packages/atl-long-lines-badge.svg)](https://stable.melpa.org/#/atl-long-lines)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 # atl-long-lines
