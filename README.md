@@ -1,10 +1,11 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![MELPA](https://melpa.org/packages/atl-long-lines-badge.svg)](https://melpa.org/#/atl-long-lines)
 [![MELPA Stable](https://stable.melpa.org/packages/atl-long-lines-badge.svg)](https://stable.melpa.org/#/atl-long-lines)
-[![CI](https://github.com/jcs-elpa/atl-long-lines/actions/workflows/test.yml/badge.svg)](https://github.com/jcs-elpa/atl-long-lines/actions/workflows/test.yml)
 
 # atl-long-lines
 > Turn off truncate-lines when the line is long.
+
+[![CI](https://github.com/jcs-elpa/atl-long-lines/actions/workflows/test.yml/badge.svg)](https://github.com/jcs-elpa/atl-long-lines/actions/workflows/test.yml)
 
 This plugin enable/disable `truncate-lines` base on the line length your
 cursor currently on.
