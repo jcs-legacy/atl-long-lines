@@ -1,11 +1,14 @@
 # ignore these directories
 /.git
 /recipes
-/test
-atl-long-lines-pkg.el
 
 # ignore generated files
 *.elc
 
-# ignore package build
-/.eask
+# eask packages
+.eask/
+dist/
+
+# packaging
+*-autoloads.el
+*-pkg.el
