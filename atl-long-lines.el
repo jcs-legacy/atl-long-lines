@@ -4,11 +4,10 @@
 ;; Created date 2020-08-01 14:57:57
 
 ;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
-;; Description: Turn off truncate-lines when the line is long.
-;; Keyword: truncate lines auto long
+;; URL: https://github.com/jcs-elpa/atl-long-lines
 ;; Version: 0.2.0
 ;; Package-Requires: ((emacs "24.3"))
-;; URL: https://github.com/jcs-elpa/atl-long-lines
+;; Keywords: truncate lines auto long
 
 ;; This file is NOT part of GNU Emacs.
 

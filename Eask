@@ -2,6 +2,9 @@
          "0.2.0"
          "Turn off truncate-lines when the line is long")
 
+(website-url "https://github.com/jcs-elpa/atl-long-lines")
+(keywords "truncate" "lines" "auto" "long")
+
 (package-file "atl-long-lines.el")
 
 (source "melpa")
