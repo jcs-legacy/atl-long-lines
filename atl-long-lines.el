@@ -7,7 +7,7 @@
 ;; URL: https://github.com/jcs-elpa/atl-long-lines
 ;; Version: 0.2.0
 ;; Package-Requires: ((emacs "24.3"))
-;; Keywords: truncate lines auto long
+;; Keywords: convenience truncate lines auto long
 
 ;; This file is NOT part of GNU Emacs.
 
