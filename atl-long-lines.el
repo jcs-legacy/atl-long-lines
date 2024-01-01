@@ -1,6 +1,6 @@
 ;;; atl-long-lines.el --- Turn off truncate-lines when the line is long  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2020  Shen, Jen-Chieh
+;; Copyright (C) 2020-2024  Shen, Jen-Chieh
 ;; Created date 2020-08-01 14:57:57
 
 ;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
