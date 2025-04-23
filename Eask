@@ -1,3 +1,5 @@
+;; -*- mode: eask; lexical-binding: t -*-
+
 (package "atl-long-lines"
          "0.2.0"
          "Turn off truncate-lines when the line is long")
